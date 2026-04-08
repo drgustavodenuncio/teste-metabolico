@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste do Metabolismo | Dr. Gustavo Denúncio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teste-metabolismo.css">
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="loading-overlay">
+  <p class="loading-label">Analisando seu perfil metabólico</p>
+  <div class="loading-bar-wrap">
+    <div class="loading-bar-fill"></div>
+  </div>
+</div>
+
+<div class="app">
+
+  <!-- ── INTRO ── -->
+  <div class="screen active" id="s-intro">
+    <img src="Inspirações/logo-gd.png" alt="GD" class="logo"
+         onerror="this.style.display='none'">
+    <p class="eyebrow">Diagnóstico Metabólico</p>
+    <h1 class="intro-title">
+      SEU METABOLISMO<br>
+      ESTÁ <span class="accent">DESATIVADO?</span>
+    </h1>
+    <p class="intro-sub">Responda 5 perguntas rápidas e descubra o estado atual do seu metabolismo.</p>
+    <div class="pills">
+      <div class="pill"><span class="pill-dot"></span>5 perguntas</div>
+      <div class="pill"><span class="pill-dot"></span>30 segundos</div>
+      <div class="pill"><span class="pill-dot"></span>Resultado imediato</div>
+    </div>
+    <button class="btn-start" onclick="startQuiz()">INICIAR TESTE</button>
+  </div>
+
+  <!-- ── QUESTION ── -->
+  <div class="screen" id="s-question">
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span class="progress-label">Pergunta</span>
+        <span class="progress-count" id="prog-count">1 / 5</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="q-inner" id="q-inner">
+      <p class="q-num" id="q-num">Pergunta 01</p>
+      <p class="q-text" id="q-text"></p>
+      <div class="answers">
+        <button class="btn-ans btn-sim" id="btn-sim">SIM</button>
+        <button class="btn-ans btn-nao" id="btn-nao">NÃO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESULT ── -->
+  <div class="screen" id="s-result">
+    <div class="result-glow" id="r-glow"></div>
+    <img src="Inspirações/logo-gd.png" alt="GD" class="logo-sm"
+         onerror="this.style.display='none'">
+    <div class="result-badge" id="r-badge">Seu resultado</div>
+    <p class="result-label">Metabolismo</p>
+    <h2 class="result-type" id="r-type"></h2>
+    <div class="score-dots" id="r-dots"></div>
+    <div class="result-line"></div>
+    <p class="result-desc" id="r-desc"></p>
+    <a class="btn-cta" id="r-cta" href="#" target="_blank">FALAR COM O DR. GUSTAVO</a>
+    <p class="result-footer">@drgustavodenuncio</p>
+    <button class="btn-retry" onclick="restart()">Refazer o teste</button>
+  </div>
+
+</div>
+
+<script src="teste-metabolismo.js"></script>
+</body>
+</html>
